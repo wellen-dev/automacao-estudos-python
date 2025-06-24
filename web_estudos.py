@@ -4,11 +4,22 @@ import webbrowser
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
 
 # Dados de Email
-EMAIL = "doutoradev@gmail.com"
-SENHA = "mzly zmkh wrky qolj"
-EMAIL_DESTINO = "wellen.acarvalho@gmail.com" 
+EMAIL = os.getenv("EMAIL")
+SENHA = os.getenv("SENHA")
+EMAIL_DESTINO = os.getenv("EMAIL_DESTINO")
+
+print("Email:", EMAIL)
+print("Senha:", SENHA)
+print("Email destino:", EMAIL_DESTINO)
+
 
 # Função que abre os sites e manda o e-mail
 def rotina_dev():
